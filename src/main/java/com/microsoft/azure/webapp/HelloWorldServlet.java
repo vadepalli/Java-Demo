@@ -33,9 +33,10 @@ public class HelloWorldServlet extends HttpServlet {
         PrintWriter printWriter  = response.getWriter();
 
         //printWriter.println("<h1>Hello World Servlet running on Azure App Service!</h1>");
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        String date = df.format(new Date());// new Date()为获取当前系统时间
-        String info = "<h1>Hello Azure! Current time is: " + date + "</h1>";
+		String datetime = "03/10";
+        //SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//Set datetime format
+        //String datetime = df.format(new Date());// new Date() get system current time
+		String info = "<h1>Hello Azure! Current date is: " + datetime + "</h1>";
         printWriter.println(info);
 	}
 
