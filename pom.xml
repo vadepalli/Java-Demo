@@ -7,6 +7,34 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>javademo Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+
+	<repositories>
+		<repository>
+		  <id>dev-azure-com-kylercai-mymaven</id>
+		  <url>https://pkgs.dev.azure.com/kylercai/_packaging/MyMaven/maven/v1</url>
+		  <releases>
+			<enabled>true</enabled>
+		  </releases>
+		  <snapshots>
+			<enabled>true</enabled>
+		  </snapshots>
+		</repository>
+	</repositories>
+	
+	<distributionManagement>
+		<repository>
+		  <id>dev-azure-com-kylercai-mymaven</id>
+		  <url>https://pkgs.dev.azure.com/kylercai/_packaging/MyMaven/maven/v1</url>
+		  <releases>
+			<enabled>true</enabled>
+		  </releases>
+		  <snapshots>
+			<enabled>true</enabled>
+		  </snapshots>
+		</repository>
+	</distributionManagement>
+      
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
