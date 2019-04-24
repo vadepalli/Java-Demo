@@ -4,7 +4,7 @@
 ## Java 
 ### App Service / Azure DevOps
 
-This sample demonstarates a Java app for Azure App Service, can be deployed as Web App (Windows/Linux, and Container) with Azure DevOps tools, with either *.war or docker image
+This sample demonstarates a Java app for Azure App Service, can be deployed as Web App (Windows/Linux, and Container) with Azure DevOps tools, with either *.war or docker image, and also support deployment to AKS.
 
 ## Usage
 
