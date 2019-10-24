@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javademo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: javademo
+  template:
+    metadata:
+      labels:
+        app: javademo
+    spec:
+      containers:
+      - name: javademo
+        image: kcai74/javademo:55
+        ports:
+        - containerPort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: javademo
+spec:
+  type:
+    LoadBalancer
+  selector:
+    app: javademo
+  ports:
+  - port: 80
+    targetPort: 8080
+
