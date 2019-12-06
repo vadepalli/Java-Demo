@@ -15,6 +15,7 @@ spec:
       containers:
       - name: javademo
         image: ckacr001.azurecr.cn/javademo:63
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 ---
