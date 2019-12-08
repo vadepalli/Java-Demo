@@ -36,7 +36,7 @@ public class HelloWorldServlet extends HttpServlet {
 		String datetime = "12/05";
         //SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//Set datetime format
         //String datetime = df.format(new Date());// new Date() get system current time
-		String info = "<h1>Hello Azure! Current date is: " + datetime + "</h1>";
+		String info = "<h1>Hello Azure! Today is: " + datetime + "</h1>";
         printWriter.println(info);
 	}
 
