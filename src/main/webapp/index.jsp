@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Hello Azure!</title>
+
 </head>
 <body bgcolor="blue">
 <h2> This is the homepage for Java App Demo</h2>
