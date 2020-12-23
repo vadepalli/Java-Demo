@@ -1,4 +1,4 @@
-[![Build status](https://dev.azure.com/kylercai/WebToDoDemo/_apis/build/status/GitHub%20kylercai%20javademo%20CI)](https://dev.azure.com/kylercai/WebToDoDemo/_build/latest?definitionId=22)
+![avatar](https://dev.azure.com/kylercai/WebToDoDemo/_apis/build/status/GitHub%20kylercai%20javademo%20CI)
 
 # Azure Dev Demo
 
