@@ -63,4 +63,4 @@ stages:
                 cp '$(Pipeline.Workspace)/drop/target/javademo.war' /home/caikai/apache-tomcat-9.0.46/webapps/;
                 pid=`ps -ef  | grep -v grep | grep tomcat | grep java | awk '{print $2}'`;
                 if [ -n "$pid" ]; then kill $pid; fi;
-                /home/caikai/apache-tomcat-9.0.46/bin/startup.sh &
+                nohup /home/caikai/apache-tomcat-9.0.46/bin/startup.sh &
