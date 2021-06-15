@@ -29,7 +29,7 @@ stages:
 - stage: Deploy
   jobs:  
   - deployment: VMDeploy
-    displayName: web
+    displayName: Deploy to VM
     environment:
       name:  myVMs
       resourceType: VirtualMachine
