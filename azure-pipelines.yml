@@ -7,7 +7,6 @@ trigger:
 - azure-pipelines 
 
 variables:
-
   # Environment name
   environmentName: 'myVMs'
 
