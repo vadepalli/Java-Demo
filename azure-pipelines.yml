@@ -59,6 +59,7 @@ stages:
               targetType: 'inline'
               script: |
                 # Modify deployment script based on the app type
+                #!/bin/sh
                 echo "Starting deployment script run";
                 cp '$(Pipeline.Workspace)/drop/target/javademo.war' /home/caikai/apache-tomcat-9.0.46/webapps/;
                 pid=`ps -ef  | grep -v grep | grep tomcat | grep java | awk '{print $2}'`;
