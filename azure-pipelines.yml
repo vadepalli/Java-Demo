@@ -66,4 +66,6 @@ stages:
                 if [ -n "$pid" ]; then
                   kill $pid
                 fi
-                nohup /home/caikai/apache-tomcat-9.0.46/bin/startup.sh &
+          - task: Bash@3
+            inputs:
+              filePath: '/home/caikai/apache-tomcat-9.0.46/bin/startup.sh'
