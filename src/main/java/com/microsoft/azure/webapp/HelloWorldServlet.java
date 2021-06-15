@@ -31,7 +31,7 @@ public class HelloWorldServlet extends HttpServlet {
         PrintWriter printWriter  = response.getWriter();
 
         //printWriter.println("<h1>Hello World Servlet running on Azure App Service!</h1>");
-        printWriter.println("<h1>Hello Azure DevOps. Today is 03/15</h1>");
+        printWriter.println("<h1>Hello Azure DevOps. Today is 06/15</h1>");
 	}
 
 	/**
