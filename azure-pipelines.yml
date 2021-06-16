@@ -63,4 +63,5 @@ stages:
                 if [ -n "$pid" ]; then kill $pid; fi;                
           - task: Bash@3
             inputs:
+              # Make sure to set the variable Process.Clean=false
               filePath: '/home/caikai/apache-tomcat-9.0.46/bin/startup.sh'
