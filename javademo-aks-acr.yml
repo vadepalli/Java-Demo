@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: javademo
 spec:
-  replicas: 3 
+  replicas: 1
   selector:
     matchLabels:
       app: javademo
@@ -15,7 +15,7 @@ spec:
       containers:
       - name: javademo
         image: ckacr001.azurecr.cn/javademo:216
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
 ---
