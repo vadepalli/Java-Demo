@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: javademo2
-        image: ckacr001.azurecr.cn/javademo:63
+        image: ckacr001.azurecr.cn/javademo:216
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
 ---
