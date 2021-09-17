@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Servlet implementation class HelloWorldServlet
@@ -31,7 +33,11 @@ public class HelloWorldServlet extends HttpServlet {
         PrintWriter printWriter  = response.getWriter();
 
         //printWriter.println("<h1>Hello World Servlet running on Azure App Service!</h1>");
-        printWriter.println("<h1>Hello Azure DevOps. Today is 06/16</h1>");
+		String datetime = "09/16";
+        //SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//Set datetime format
+        //String datetime = df.format(new Date());// new Date() get system current time
+		String info = "<h1>Hello Azure DevOps. Today is " + datetime + "</h1>";
+        printWriter.println(info);
 	}
 
 	/**
