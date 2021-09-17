@@ -17,6 +17,8 @@ spec:
         image: kcai74/javademo:55
         ports:
         - containerPort: 8080
+      nodeSelector:
+        kubernetes.io/os: linux
 ---
 kind: Service
 apiVersion: v1
