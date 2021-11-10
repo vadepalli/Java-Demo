@@ -58,7 +58,7 @@ public class HelloWorldServlet extends HttpServlet {
 			long endTime = System.currentTimeMillis();
 			RemoteDependencyTelemetry telemetry = new RemoteDependencyTelemetry();
 			telemetry.setSuccess(success);
-			telemetry.setName("Calculate duration");
+			telemetry.setName("Denpendency Demo:");
 			telemetry.setTimestamp(new Date(startTime));
 			telemetry.setDuration(new Duration(endTime - startTime));
 			telemetryClient.trackDependency(telemetry);
