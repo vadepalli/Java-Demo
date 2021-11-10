@@ -55,7 +55,7 @@ public class HelloWorldServlet extends HttpServlet {
 			//printWriter.println("<h1>Hello World Servlet running on Azure App Service!</h1>");
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//Set datetime format
 			String datetime = df.format(new Date());// new Date() get system current time
-			info = "<h1>Hello Azure DevOps. Today is " + datetime + "</h1>";
+			//info = "<h1>Hello Azure DevOps. Today is " + datetime + "</h1>";
 		} finally {
 			//long endTime = System.currentTimeMillis();
 			RemoteDependencyTelemetry telemetry = new RemoteDependencyTelemetry();
