@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
+import java.util.HashMap;
 
 import com.microsoft.applicationinsights.TelemetryClient;
 import com.microsoft.applicationinsights.telemetry.RemoteDependencyTelemetry;
@@ -53,21 +55,23 @@ public class HelloWorldServlet extends HttpServlet {
 			//printWriter.println("<h1>Hello World Servlet running on Azure App Service!</h1>");
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//Set datetime format
 			String datetime = df.format(new Date());// new Date() get system current time
-			//info = "<h1>Hello Azure DevOps. Today is " + datetime + "</h1>";
+			info = "<h1>Hello Azure DevOps. Today is " + datetime + "</h1>";
 		} finally {
-			long endTime = System.currentTimeMillis();
+			//long endTime = System.currentTimeMillis();
 			RemoteDependencyTelemetry telemetry = new RemoteDependencyTelemetry();
 			telemetry.setSuccess(success);
 			telemetry.setName("Denpendency Demo:");
 			telemetry.setTimestamp(new Date(startTime));
-			telemetry.setDuration(new Duration(endTime - startTime));
+			telemetry.setDuration(new Duration(1000));
 			telemetryClient.trackDependency(telemetry);
 		}
 
 		printWriter.println(info);
 
 		// Track for log
-		telemetryClient.trackTrace("Logs collected by appInsight", SeverityLevel.Warning, null);
+		Map<String, String> properties = new HashMap<String, String>();
+		properties.put("method", "doGet");
+		telemetryClient.trackTrace("Logs collected by appInsight", SeverityLevel.Warning, properties);
 
 	}
 
