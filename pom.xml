@@ -43,6 +43,12 @@
       <!-- or applicationinsights-core for bare API -->
       <version>2.5.0</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.microsoft.azure</groupId>
+      <artifactId>applicationinsights-core</artifactId>
+      <version>2.6.3</version>
+    </dependency>    
       
     <dependency>
       <groupId>junit</groupId>
