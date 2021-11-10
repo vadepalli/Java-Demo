@@ -46,7 +46,7 @@ public class HelloWorldServlet extends HttpServlet {
 
 		// Track for event
 		telemetryClient.trackEvent("Page Visit");
-		// Track for Metrics
+		// Track for custom Metrics
 		telemetryClient.trackMetric("visitTimes", visitTimes++);
 		// Track for dependencies
 		boolean success = false;
@@ -55,15 +55,22 @@ public class HelloWorldServlet extends HttpServlet {
 			//printWriter.println("<h1>Hello World Servlet running on Azure App Service!</h1>");
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//Set datetime format
 			String datetime = df.format(new Date());// new Date() get system current time
+
 			//info = "<h1>Hello Azure DevOps. Today is " + datetime + "</h1>";
 		} finally {
+			String dependency = "Backend-A";
 			//long endTime = System.currentTimeMillis();
+
+			// Simulate fault call to dependency
 			RemoteDependencyTelemetry telemetry = new RemoteDependencyTelemetry();
 			telemetry.setSuccess(success);
-			telemetry.setName("Denpendency Demo:");
+			telemetry.setResultCode("404");
+			telemetry.setName(dependency);
 			telemetry.setTimestamp(new Date(startTime));
 			telemetry.setDuration(new Duration(1000));
 			telemetryClient.trackDependency(telemetry);
+			// throw exception
+			telemetryClient.trackException(new Exception("calling to " + dependency + " is causing exception!"));
 		}
 
 		printWriter.println(info);
