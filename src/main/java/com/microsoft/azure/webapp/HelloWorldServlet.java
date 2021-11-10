@@ -38,7 +38,7 @@ public class HelloWorldServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter printWriter  = response.getWriter();
-		String info = "01/01";
+		String info = "<h1>Hello Azure DevOps. Today is " + "01/01" + "</h1>";
 
 		// Below for application insight Telemetry tracking demo
 
