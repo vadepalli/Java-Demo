@@ -52,12 +52,14 @@ public class HelloWorldServlet extends HttpServlet {
 		boolean success = false;
 		long startTime = System.currentTimeMillis();
 		try {
-			//printWriter.println("<h1>Hello World Servlet running on Azure App Service!</h1>");
+			// Simulate call the dependency "Backend-A"
+			// Backend-A.call();
+
 			//SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//Set datetime format
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//Set datetime format
 			String datetime = df.format(new Date());// new Date() get system current time
 
-			info = "<h1>Hello Azure DevOps. Today is " + datetime + "</h1>";
+			//info = "<h1>Hello Azure DevOps. Today is " + datetime + "</h1>";
 		} finally {
 			String dependency = "Backend-A";
 			//long endTime = System.currentTimeMillis();
