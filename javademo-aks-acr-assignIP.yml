@@ -1,20 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javademo
+  name: javademo3
 spec:
-  replicas: 1 
+  replicas: 1
   selector:
     matchLabels:
-      app: javademo
+      app: javademo3
   template:
     metadata:
       labels:
-        app: javademo
+        app: javademo3
     spec:
       containers:
-      - name: javademo
-        image: kcai74/javademo:55
+      - name: javademo3
+        image: ckacr001.azurecr.cn/javademo:294
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
       nodeSelector:
@@ -23,12 +24,15 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: javademo
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_trialaks001_trialaks001_chinaeast2
+  name: javademo3
 spec:
+  loadBalancerIP: 52.131.252.99
   type:
     LoadBalancer
   selector:
-    app: javademo
+    app: javademo3
   ports:
   - port: 80
     targetPort: 8080

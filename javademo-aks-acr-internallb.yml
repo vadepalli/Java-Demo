@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javademo2
+  name: javademointernal
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: javademo2
+      app: javademointernal
   template:
     metadata:
       labels:
-        app: javademo2
+        app: javademointernal
     spec:
       containers:
-      - name: javademo2
+      - name: javademointernal
         image: ckacr001.azurecr.cn/javademo:294
         imagePullPolicy: IfNotPresent
         ports:
@@ -24,14 +24,14 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: javademo2
+  name: javademointernal
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-internal: "true"  
 spec:
   type:
     LoadBalancer
   selector:
-    app: javademo2
+    app: javademointernal
   ports:
   - port: 80
     targetPort: 8080
