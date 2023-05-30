@@ -40,7 +40,7 @@ public class HelloWorldServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter printWriter  = response.getWriter();
-		String info = "<h1>Hello Azure DevOps. Today is " + "Jan.01,2022" + "</h1>";
+		String info = "<h1>Hello AKS. Today is " + "Jan.01,2022" + "</h1>";
 
 		// Below for application insight Telemetry tracking demo
 
@@ -57,9 +57,9 @@ public class HelloWorldServlet extends HttpServlet {
 
 			//SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//Set datetime format
 			
-			// SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//Set datetime format
-			// String datetime = df.format(new Date());// new Date() get system current time
-			// info = "<h1>Hello Azure DevOps. Today is " + datetime + "</h1>";
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//Set datetime format
+			String datetime = df.format(new Date());// new Date() get system current time
+			info = "<body bgcolor=\"green\"> <h1>Hello Azure DevOps. Today is " + datetime + "</h1>";
 		} finally {
 			String dependency = "Backend-A";
 			//long endTime = System.currentTimeMillis();
@@ -76,6 +76,7 @@ public class HelloWorldServlet extends HttpServlet {
 			telemetryClient.trackException(new Exception("calling to " + dependency + " is causing exception!"));
 		}
 
+		
 		printWriter.println(info);
 
 		// Track for log
