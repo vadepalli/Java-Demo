@@ -7,8 +7,17 @@
 <title>Hello Azure!</title>
 
 </head>
-<body bgcolor="blue">
+<body>
 <h2> This is the homepage for Java App Demo</h2>
+
+<!--生成页面分隔section-->
+<div style="border-bottom: 1px solid #000000; margin-bottom: 1em;">
+    <!--生成用户输入框，将用户输入提交到servlet ValidateID做输入验证，并把servlet的返回信息打印在页面上-->
+    <form action="./ValidateID" method="post">
+        <input type="text" name="id" />
+        <input type="submit" value="Submit" />
+    </form>
+</div>
 
 <ul>
 <li> The url for the Servlet is <a href="./HelloWorldServlet">./HelloWorldServlet</a> </li>
