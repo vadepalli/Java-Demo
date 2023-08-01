@@ -64,6 +64,12 @@
 	    <scope>provided</scope>
 	</dependency>
     
+  
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>8.0.1</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>javademo</finalName>
@@ -78,6 +84,12 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+            </plugin>            
         </plugins>
     
   </build>
