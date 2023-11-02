@@ -37,6 +37,6 @@
                 </configuration>
             </plugin>
         </plugins>
-    
+    	<finalname>java-demo</finalname>
   </build>
 </project>
